@@ -28,8 +28,9 @@ from kws_streaming.models import model_params
 from kws_streaming.models import model_utils
 from kws_streaming.models import models as kws_models
 
-models_utils = tf._keras_internal.models  # pylint: disable=protected-access
-functional = tf._keras_internal.engine.functional  # pylint: disable=protected-access
+import keras
+models_utils = keras.src.models  # pylint: disable=protected-access
+functional = keras.src.engine.functional  # pylint: disable=protected-access
 
 
 def save_model_summary(model, path, file_name='model_summary.txt'):
